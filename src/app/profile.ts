@@ -9,5 +9,5 @@ export const PROFILE = {
   localisation: 'France',
   email: 'nyadjoumaxime@gmail.com',
   linkedin: 'https://www.linkedin.com/in/maxime-nyadjou-a55765396',
-  github: 'https://github.com/Nyadjou-maxime',
+  github: 'https://github.com/nyadjou-maximekevin',
 };
