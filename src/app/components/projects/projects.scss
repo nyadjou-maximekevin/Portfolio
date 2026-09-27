@@ -1,0 +1,98 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  --x: 50%;
+  --y: 0%;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  height: 100%;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+
+  /* Halo qui suit la souris */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(420px circle at var(--x) var(--y), rgba(56, 189, 248, 0.12), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color: rgba(56, 189, 248, 0.35);
+    transform: translateY(-6px);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.number {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-faint);
+}
+
+.links {
+  display: flex;
+  gap: 8px;
+
+  a {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}

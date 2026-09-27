@@ -1,0 +1,42 @@
+<section class="section">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="eyebrow">Réalisations</span>
+      <h2 class="section-title">Projets <span class="gradient-text">récents</span></h2>
+    </div>
+
+    <div class="projects-grid">
+      @for (projet of projets; track projet.titre; let i = $index) {
+        <div appReveal [revealDelay]="i * 120">
+          <article class="project-card" (mousemove)="spotlight($event)">
+            <div class="card-top">
+              <span class="number">0{{ i + 1 }}</span>
+
+              <div class="links">
+                @if (projet.code) {
+                  <a [href]="projet.code" target="_blank" rel="noopener" aria-label="Code source">
+                    <app-icon name="github" [size]="18" />
+                  </a>
+                }
+                @if (projet.demo) {
+                  <a [href]="projet.demo" target="_blank" rel="noopener" aria-label="Démo en ligne">
+                    <app-icon name="arrow-up-right" [size]="18" />
+                  </a>
+                }
+              </div>
+            </div>
+
+            <h3>{{ projet.titre }}</h3>
+            <p>{{ projet.description }}</p>
+
+            <ul class="stack">
+              @for (techno of projet.stack; track techno) {
+                <li class="tag">{{ techno }}</li>
+              }
+            </ul>
+          </article>
+        </div>
+      }
+    </div>
+  </div>
+</section>

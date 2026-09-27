@@ -1,0 +1,32 @@
+<header class="navbar" [class.scrolled]="scrolled()" [class.open]="menuOuvert()">
+  <nav class="container nav-inner">
+    <a class="logo" href="#accueil" (click)="fermerMenu()">
+      {{ initiales }}<span>.</span>
+    </a>
+
+    <div class="nav-links" id="nav-links">
+      @for (lien of liens; track lien.id) {
+        <a
+          [href]="'#' + lien.id"
+          [class.active]="sectionActive() === lien.id"
+          (click)="fermerMenu()"
+        >
+          {{ lien.label }}
+        </a>
+      }
+    </div>
+
+    <a class="btn btn-primary nav-cta" href="#contact">Me contacter</a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-controls="nav-links"
+      [attr.aria-expanded]="menuOuvert()"
+      [attr.aria-label]="menuOuvert() ? 'Fermer le menu' : 'Ouvrir le menu'"
+      (click)="toggleMenu()"
+    >
+      <app-icon [name]="menuOuvert() ? 'close' : 'menu'" [size]="24" />
+    </button>
+  </nav>
+</header>

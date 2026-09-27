@@ -1,0 +1,72 @@
+<section class="section">
+  <div class="container contact-inner">
+    <div class="contact-intro" appReveal>
+      <span class="eyebrow">Contact</span>
+      <h2 class="section-title">Travaillons <span class="gradient-text">ensemble</span></h2>
+      <p>
+        Un projet, une opportunité ou simplement une question ? Écris-moi, je réponds
+        généralement sous 24 heures.
+      </p>
+
+      <div class="channels">
+        <a class="channel" [href]="'mailto:' + profil.email">
+          <app-icon name="mail" />
+          <div>
+            <span class="label">Email</span>
+            <span class="value">{{ profil.email }}</span>
+          </div>
+        </a>
+        <a class="channel" [href]="profil.linkedin" target="_blank" rel="noopener">
+          <app-icon name="linkedin" />
+          <div>
+            <span class="label">LinkedIn</span>
+            <span class="value">{{ profil.prenom }} {{ profil.nom }}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <form
+      class="contact-form"
+      #form="ngForm"
+      (ngSubmit)="envoyer()"
+      appReveal
+      [revealDelay]="150"
+    >
+      <div class="row">
+        <label>
+          <span>Nom</span>
+          <input type="text" placeholder="Jean Dupont" [(ngModel)]="nom" name="nom" required>
+        </label>
+
+        <label>
+          <span>Email</span>
+          <input
+            type="email"
+            placeholder="jean@exemple.com"
+            [(ngModel)]="email"
+            name="email"
+            required
+            email
+          >
+        </label>
+      </div>
+
+      <label>
+        <span>Message</span>
+        <textarea
+          placeholder="Bonjour Maxime, ..."
+          rows="6"
+          [(ngModel)]="message"
+          name="message"
+          required
+        ></textarea>
+      </label>
+
+      <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
+        Envoyer le message
+        <app-icon name="arrow-right" [size]="18" />
+      </button>
+    </form>
+  </div>
+</section>

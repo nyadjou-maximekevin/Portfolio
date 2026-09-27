@@ -1,0 +1,38 @@
+<section class="section">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <span class="eyebrow">Stack technique</span>
+      <h2 class="section-title">Mes <span class="gradient-text">compétences</span></h2>
+    </div>
+
+    <div class="skills-grid">
+      @for (competence of competences; track competence.nom; let i = $index) {
+        <div appReveal [revealDelay]="i * 100">
+          <div class="skill-card" [style.--niveau]="competence.niveau + '%'">
+            <div class="skill-head">
+              <span class="skill-icon">
+                <app-icon [name]="competence.icone" [size]="22" />
+              </span>
+              <div>
+                <h3>{{ competence.nom }}</h3>
+                <span class="categorie">{{ competence.categorie }}</span>
+              </div>
+              <span class="niveau">{{ competence.niveau }}%</span>
+            </div>
+
+            <div
+              class="bar"
+              role="progressbar"
+              [attr.aria-label]="competence.nom"
+              [attr.aria-valuenow]="competence.niveau"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

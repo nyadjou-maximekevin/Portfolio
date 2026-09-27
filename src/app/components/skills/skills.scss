@@ -1,0 +1,75 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  height: 100%;
+  padding: 26px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.3s ease, background 0.3s ease;
+
+  &:hover {
+    border-color: rgba(167, 139, 250, 0.35);
+    background: var(--surface-hover);
+  }
+}
+
+.skill-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.skill-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.categorie {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+.niveau {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+/* La barre se remplit quand la carte apparaît (classe is-visible de appReveal) */
+.bar-fill {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--gradient);
+  transition: width 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s;
+}
+
+.is-visible .bar-fill {
+  width: var(--niveau);
+}

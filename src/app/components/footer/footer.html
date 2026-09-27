@@ -1,0 +1,21 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="brand">
+      <span class="name">{{ profil.prenom }} {{ profil.nom }}<span class="accent">.</span></span>
+      <span class="copy">© {{ annee }} — Conçu et développé avec Angular</span>
+    </div>
+
+    <div class="footer-links">
+      <a [href]="profil.github" target="_blank" rel="noopener" aria-label="GitHub">
+        <app-icon name="github" [size]="18" />
+      </a>
+      <a [href]="profil.linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <app-icon name="linkedin" [size]="18" />
+      </a>
+      <a [href]="'mailto:' + profil.email" aria-label="Email">
+        <app-icon name="mail" [size]="18" />
+      </a>
+      <a class="top" href="#accueil">Retour en haut ↑</a>
+    </div>
+  </div>
+</footer>
