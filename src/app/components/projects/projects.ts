@@ -11,6 +11,8 @@ interface Projet {
   code?: string;
   /** Lien vers la démo en ligne — laisser vide pour masquer le bouton */
   demo?: string;
+  /** true = projet pas encore terminé : affiche un badge « En cours » */
+  enCours?: boolean;
 }
 
 @Component({
@@ -32,14 +34,16 @@ export class Projects {
     {
       titre: 'Plateforme de réservation',
       description:
-        'Réservation en ligne avec calendrier interactif, espace administrateur et gestion des disponibilités.',
-      stack: ['Angular', 'SCSS', 'TypeScript'],
+        'Réservation de créneaux avec calendrier, rôles client / administrateur et gestion des conflits de réservation.',
+      stack: ['Angular', 'NestJS', 'PostgreSQL'],
+      enCours: true,
     },
     {
       titre: 'Portfolio développeur',
       description:
         'Ce site : portfolio responsive et animé, construit avec Angular et déployé dans le cloud.',
       stack: ['Angular', 'SCSS', 'Vercel'],
+      code: 'https://github.com/nyadjou-maximekevin/Portfolio',
     },
   ];
 

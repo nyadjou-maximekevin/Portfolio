@@ -12,6 +12,10 @@
             <div class="card-top">
               <span class="number">0{{ i + 1 }}</span>
 
+              @if (projet.enCours) {
+                <span class="badge-en-cours">En cours de développement</span>
+              }
+
               <div class="links">
                 @if (projet.code) {
                   <a [href]="projet.code" target="_blank" rel="noopener" aria-label="Code source">
