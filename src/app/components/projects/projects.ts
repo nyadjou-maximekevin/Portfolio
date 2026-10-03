@@ -24,8 +24,10 @@ export class Projects {
     {
       titre: 'Gestion de dépenses',
       description:
-        'Application Full Stack avec dashboard, statistiques et authentification JWT pour suivre et analyser ses dépenses.',
-      stack: ['Angular', 'NestJS', 'PostgreSQL', 'JWT'],
+        'Application Full Stack en ligne : authentification JWT, suivi des dépenses par mois et catégorie, statistiques calculées en SQL et graphiques.',
+      stack: ['Angular', 'NestJS', 'PostgreSQL', 'TypeORM', 'JWT'],
+      code: 'https://github.com/nyadjou-maximekevin/gestion-depense',
+      demo: 'https://gestion-depense-rosy.vercel.app',
     },
     {
       titre: 'Plateforme de réservation',
